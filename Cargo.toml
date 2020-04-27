@@ -1,0 +1,24 @@
+[package]
+name = "hexutil"
+version = "0.1.0"
+authors = ["Martin Michaelis <code@mgjm.de>"]
+description = "A macro to implement common traits to work with hexadecimal values"
+repository = "https://github.com/mgjm/hexutil"
+readme = "README.md"
+keywords = ["no_std", "hex", "serde", "macro"]
+categories = ["encoding", "no-std"]
+license = "MIT OR Apache-2.0"
+edition = "2018"
+
+[features]
+default = ["std"]
+std = ["alloc", "err-derive/std", "serde/std"]
+alloc = ["serde/alloc"]
+
+[dependencies]
+err-derive = { version = "0.2.4", default-features = false }
+serde = { version = "1.0.106", default-features = false }
+
+[dev-dependencies]
+bincode = "1.2.1"
+serde_json = "1.0.52"
